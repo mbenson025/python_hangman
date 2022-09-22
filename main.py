@@ -1,25 +1,31 @@
 # python_hangman
 
-# python needs to import the random module
 import random
 
-
 word_bank = ["amusement", "balance", "chemical", "development"]
-
-# ask user to guess a letter then covert to lowercase
-user_guess = input("Guess a letter: ").lower()
-
-# choose a random word from the word_bank
 round_word = random.choice(word_bank)
+print(f"Round word is {round_word}")
 
-# convert word to an array of letters
-round_letters = list(round_word)
-print(round_letters)
+game_display = []
+for each_letter in range(len(round_word)):
+    game_display += "_"
 
-# iterate through letters to check if guess is right or wrong
-for letter in round_letters:
-    print(letter)
-    if letter == user_guess:
-        print("Right")
-    else:
-        print("Wrong")
+
+def letterguess():
+    guess = input("Guess a letter: ").lower()
+    accumulator = 0
+    # compare user guess to round word
+    for letter in round_word:
+        if letter == guess:
+            # replace "_" with correct letter
+            game_display[accumulator] = guess
+            # add to accumulator at the end of the loop for correct letter position
+        accumulator += 1
+    print(game_display)
+
+
+while "_" in game_display:
+    letterguess()
+
+if "_" not in game_display:
+    print("You Win!")
