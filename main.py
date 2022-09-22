@@ -1,76 +1,24 @@
 # python_hangman
 
 import random
+from ascii import title
+from ascii import stages
+from words import word_bank
 
-ascii = ['''
-  +---+
-  |   |
-  O   |
- /|\  |
- / \  |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
- /    |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|   |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
-  |   |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
-      |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-      |
-      |
-      |
-      |
-=========
-''']
 
 end_game = False
-
 lives = 6
 
 word_bank = ["amusement", "balance", "chemical", "development"]
 round_word = random.choice(word_bank)
+print(title)
 print(f"Round word is {round_word}")
 
 game_display = []
 for each_letter in range(len(round_word)):
     game_display += "_"
 
+already_guessed = []
 
 while not end_game:
     guess = input("Guess a letter: ").lower()
@@ -90,7 +38,7 @@ while not end_game:
         if lives == 0:
             print("You Lose!")
             end_game = True
-    print(ascii[lives])
+    print(stages[lives])
     print(game_display)
 
 
