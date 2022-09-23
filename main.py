@@ -1,6 +1,7 @@
 # python_hangman
 
 import random
+import os
 from ascii import title, stages
 from words import word_bank
 
@@ -20,6 +21,10 @@ print(" ")
 
 while not end_game:
     guess = input("Guess a letter: ").lower()
+
+    # clear screen after guessing letter
+    def clear():
+        os.system('clear')
 
     # compare user guess to round word
     if guess in round_word:
