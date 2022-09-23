@@ -6,11 +6,13 @@
 
 <br>
 
-Command line application to practice Python basics. Guess letters to complete the word
+## Description
+
+<br>
+
+Command line application game to practice Python basics. Guess letters to complete each word
 
 <br><br>
-
-<img src="/assets/game.jpg" alt="gameplay" title="Hangman Game">
 
 ## Usage
 
@@ -25,3 +27,7 @@ Clone the repo, run the terminal and use this command to start the app:
 ```
 python main.py
 ```
+
+<br><br>
+
+<img src="/assets/game.jpg" alt="gameplay" title="Hangman Game">
